@@ -45,6 +45,7 @@ Secara garis besar, kita diminta untuk set-up virtual env dalam pembuatan aplika
         ]
 Diatas terdapat bagian urls.py di project_django, kita menambahkan line path("katalog/", include("katalog.urls")) sebagai arahan untuk mengambil data sesuai dengan request.
 
+
 **Lalu dilanjut dengan:**
 
         urls.py pada katalog
