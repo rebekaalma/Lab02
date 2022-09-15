@@ -59,33 +59,33 @@ Terdapat bagian urls.py di katalog, kita menambahkan line app_name = "katalog" u
 **Selanjutnya adalah sebagai berikut:**
 
 
-models.py
-class CatalogItem(models.Model):
-    item_name = models.CharField(max_length=255)
-    item_price = models.BigIntegerField()
-    item_stock = models.IntegerField()
-    description = models.TextField()
-    rating = models.IntegerField()
-    item_url = models.URLField()
+        models.py
+        class CatalogItem(models.Model):
+            item_name = models.CharField(max_length=255)
+            item_price = models.BigIntegerField()
+            item_stock = models.IntegerField()
+            description = models.TextField()
+            rating = models.IntegerField()
+            item_url = models.URLField()
 Terdapat bagian models.py, dimana ada proses pendefinisian database yang akan disimpan pada variabel-variabel untuk dipakai pada views.py.
 
 
 **Dilanjut dengan bagian views.py:**
 
 
-views.py
-from django.shortcuts import render
-from katalog.models import CatalogItem
+        views.py
+        from django.shortcuts import render
+        from katalog.models import CatalogItem
 
-#TODO: Create your views here.
+        #TODO: Create your views here.
 
-def show_catalog_item(request):
-    data_catalog_item = CatalogItem.objects.all()
-    context = {
-        'nama' : 'Rebeka',
-        'NPM' : '2106653060',
-        'list_catalog': data_catalog_item
-    }
+        def show_catalog_item(request):
+            data_catalog_item = CatalogItem.objects.all()
+            context = {
+                'nama' : 'Rebeka',
+                'NPM' : '2106653060',
+                'list_catalog': data_catalog_item
+            }
 
     return render(request, "katalog.html", context)
 Terdapat bagian views.py di katalog yang memunculkan function show_katalog yang memuat database pada models.py untuk disimpan pada variabel list_catalog agar variabel bisa digunakan dalam loop pada html dan bisa ditampilkan.
@@ -94,15 +94,15 @@ Terdapat bagian views.py di katalog yang memunculkan function show_katalog yang 
 **Dan yang terakhir:**
 
 
-html
-{% for item in list_catalog %}
-    <tr>
-        <th>{{item.item_name}}</th>
-        <th>{{item.item_price}}</th>
-        <th>{{item.item_stock}}</th>
-        <th>{{item.rating}}</th>
-        <th>{{item.description}}</th>
-        <th>{{item.item_url}}</th>
-      </tr>
-    {% endfor %}
+        html
+        {% for item in list_catalog %}
+            <tr>
+                <th>{{item.item_name}}</th>
+                <th>{{item.item_price}}</th>
+                <th>{{item.item_stock}}</th>
+                <th>{{item.rating}}</th>
+                <th>{{item.description}}</th>
+                <th>{{item.item_url}}</th>
+              </tr>
+            {% endfor %}
 Terdapat bagian html, dimana ada penambahan loop yang berfungsi untuk memanggil variabel yang telah di-define dalam views.py dimana parameter data yang diambil adalah pada variabel list_barang yang telah di-define untuk mencakup semua isi object pada models.py. Data-data yang sesuai kemudian akan dimunculkan atau ditampilkan dalam aplikasi.
