@@ -10,6 +10,7 @@ https://katalog-lab02-2106653060.herokuapp.com/katalog/
 Dari gambar diatas kita ketahui bahwa bagan tersebut menjelaskan request client ke web aplikasi berbasis Django beserta responnya dimana terdapat kaitan antara urls.py, views.py, models.py, dan berkas html yang ada. Dimulai dari proses permintaan yang dilakukan di server Django melalui __urls__ yang nantinya akan diteruskan ke __views__. Dalam tahapan ini, pihak pengembang akan mengartikan sinyal tersebut sebagai tanda untuk memproses permintaan tersebut. Jika nantinya dalam proses memerlukan keterlibatan database, tentu query akan dipanggil oleh __views__ menuju ke models dan database akan mengembalikan hasil dari query tersebut ke __views__. Selanjutnya saat proses permintaan telah selesai, hasil proses tersebut akan dipetakan ke dalam HTML yang sudah didefinisikan sebelum akhirnya HTML tersebut ditampilkan kepada user.
 
 
+
 **Virtual Environment**
 
 
