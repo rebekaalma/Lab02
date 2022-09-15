@@ -9,6 +9,7 @@ https://katalog-lab02-2106653060.herokuapp.com/katalog/
 <img width="1264" alt="Untitled" src="https://user-images.githubusercontent.com/112610405/190167373-a6d6eba8-3016-4050-a76e-ad6e48d040ca.png">
 Dari gambar diatas kita ketahui bahwa bagan tersebut menjelaskan request client ke web aplikasi berbasis Django beserta responnya dimana terdapat kaitan antara urls.py, views.py, models.py, dan berkas html yang ada. Dimulai dari proses permintaan yang dilakukan di server Django melalui __urls__ yang nantinya akan diteruskan ke __views__. Dalam tahapan ini, pihak pengembang akan mengartikan sinyal tersebut sebagai tanda untuk memproses permintaan tersebut. Jika nantinya dalam proses memerlukan keterlibatan database, tentu query akan dipanggil oleh __views__ menuju ke models dan database akan mengembalikan hasil dari query tersebut ke __views__. Selanjutnya saat proses permintaan telah selesai, hasil proses tersebut akan dipetakan ke dalam HTML yang sudah didefinisikan sebelum akhirnya HTML tersebut ditampilkan kepada user.
 
+
 **Virtual Environment**
 
 
@@ -20,13 +21,14 @@ Lalu, mengapa kita perlu menggunakan virtual env? tentunya dikarenakan kita perl
 
 Selanjutnya apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment? tentunya tetap bisa. Namun, tentu kehadiran virtual env adalah memudahkan user. Dengan demikian, jika tanpa virtual env akan ada kekurangannya. Jika pakai virtual environtment, kita dapat mencegah adanya issue dependency yang terjadi saat ada update atau perbedaan versi seperti yang sudah dijelaskan sebelumnya.
 
+
 **Cara mengimplementasikan poin 1 sampai dengan 4**
 
 
 Secara garis besar, kita diminta untuk set-up virtual env dalam pembuatan aplikasi dimana terdapat template yang disediakan untuk kita clone. Dari template yang ada, kita akan mengisi sesuai dengan to-do yang ada.
 
 
-Dimulai dari yang pertama, yaitu:
+**Dimulai dari yang pertama, yaitu:**
 
 
 urls.py
@@ -36,14 +38,14 @@ urls.py pada project_django
 
 
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('example_app.urls')),
-    path("katalog/", include("katalog.urls")),
-]
+        urlpatterns = [
+            path('admin/', admin.site.urls),
+            path('', include('example_app.urls')),
+            path("katalog/", include("katalog.urls")),
+        ]
 Diatas terdapat bagian urls.py di project_django, kita menambahkan line path("katalog/", include("katalog.urls")) sebagai arahan untuk mengambil data sesuai dengan request.
 
-Lalu dilanjut dengan:
+**Lalu dilanjut dengan:**
 
 urls.py pada katalog
 
@@ -54,7 +56,7 @@ urlpatterns = [
 Terdapat bagian urls.py di katalog, kita menambahkan line app_name = "katalog" untuk menambahkan namespace dalam aplikasi dan line path("", show_katalog, name = "show_katalog") berfungsi sebagai arahan untuk memunculkan isi data dari function show_katalog pada views.py .
 
 
-Selanjutnya adalah sebagai berikut:
+**Selanjutnya adalah sebagai berikut:**
 
 
 models.py
@@ -68,7 +70,7 @@ class CatalogItem(models.Model):
 Terdapat bagian models.py, dimana ada proses pendefinisian database yang akan disimpan pada variabel-variabel untuk dipakai pada views.py.
 
 
-Dilanjut dengan bagian views.py:
+**Dilanjut dengan bagian views.py:**
 
 
 views.py
@@ -89,7 +91,7 @@ def show_catalog_item(request):
 Terdapat bagian views.py di katalog yang memunculkan function show_katalog yang memuat database pada models.py untuk disimpan pada variabel list_catalog agar variabel bisa digunakan dalam loop pada html dan bisa ditampilkan.
 
 
-Dan yang terakhir:
+**Dan yang terakhir:**
 
 
 html
