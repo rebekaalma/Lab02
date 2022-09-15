@@ -31,10 +31,10 @@ Secara garis besar, kita diminta untuk set-up virtual env dalam pembuatan aplika
 **Dimulai dari yang pertama, yaitu:**
 
 
-urls.py
+        urls.py
 
 
-urls.py pada project_django
+        urls.py pada project_django
 
 
 
@@ -47,12 +47,12 @@ Diatas terdapat bagian urls.py di project_django, kita menambahkan line path("ka
 
 **Lalu dilanjut dengan:**
 
-urls.py pada katalog
+        urls.py pada katalog
 
 
-urlpatterns = [
-    path("", show_katalog, name = "show_katalog"),
-]
+        urlpatterns = [
+            path("", show_katalog, name = "show_katalog"),
+        ]
 Terdapat bagian urls.py di katalog, kita menambahkan line app_name = "katalog" untuk menambahkan namespace dalam aplikasi dan line path("", show_katalog, name = "show_katalog") berfungsi sebagai arahan untuk memunculkan isi data dari function show_katalog pada views.py .
 
 
