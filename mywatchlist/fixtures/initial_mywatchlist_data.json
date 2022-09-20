@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 1,
+        "fields": {
+            "watched": true,
+            "title": "13 Reasons Why",
+            "rating": "4",
+            "release_date": "2018-08-08",
+            "review": "Merupakan film yang menarik ditonton oleh anak remaja karena berkaitan dengan dunia perkuliahan"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 2,
+        "fields": {
+            "watched": true,
+            "title": "The Fault in Our Stars",
+            "rating": "4",
+            "release_date": "2015-12-08",
+            "review": "Sebuah film yang menggambarkan kesetiaan cinta meskipun dengan banyak kekurangan"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 3,
+        "fields": {
+            "watched": true,
+            "title": "Jumanji",
+            "rating": "3",
+            "release_date": "2020-12-18",
+            "review": "Film yang cocok untuk semua kalangan karena unik dan menghibur"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 4,
+        "fields": {
+            "watched": true,
+            "title": "Sweet sour",
+            "rating": "5",
+            "release_date": "2021-09-18",
+            "review": "Film korea yang cukup menarik karena memiliki alur yang sulit untuk ditebak"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 5,
+        "fields": {
+            "watched": true,
+            "title": "Miracle in celll no 7",
+            "rating": "5",
+            "release_date": "2015-12-11",
+            "review": "Film yang menggambarkan hubungan yang erat antara anak dengan orang tua yang sungguh mengharukan"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 6,
+        "fields": {
+            "watched": true,
+            "title": "Divergent",
+            "rating": "4",
+            "release_date": "2016-08-08",
+            "review": "Film yang sangat unik karena menggambarkan dunia yang berbeda dengan keadaan dunia saat ini"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 7,
+        "fields": {
+            "watched": true,
+            "title": "Five Feet Apart",
+            "rating": "4",
+            "release_date": "2017-08-08",
+            "review": "Film mengharukan karena menceritakan hubungan antara sepasang kekasih yang memiliki penyakit yanh sulit disembuhkan"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 8,
+        "fields": {
+            "watched": true,
+            "title": "Midway",
+            "rating": "5",
+            "release_date": "2015-12-11",
+            "review": "Film terbaik di tahun 2015 hingga mencapai target penonton yang sangat banyak"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 9,
+        "fields": {
+            "watched": false,
+            "title": "La La Land",
+            "rating": "3",
+            "release_date": "2015-12-19",
+            "review": "Film yang menarik menceritakan kehidupan sepasang kekasih dengan segala keunikannya"
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 10,
+        "fields": {
+            "watched": false,
+            "title": "The Silence",
+            "rating": "3",
+            "release_date": "2016-08-08",
+            "review": "Film yang menegangkan menceritakan kehidupan yang dipenuhi oleh monster"
+        }
+    }
+]
