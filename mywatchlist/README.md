@@ -48,7 +48,64 @@ Fungsi HTML yang lebih spesifik yaitu :
 - Menampilkan berbagai informasi di dalam sebuah browser Internet.
 - Membuat link menuju halaman web lain dengan kode tertentu (hypertext).
  
+ # HTML
+HTML (HyperText Markup Language) adalah suatu bahasa yang menggunakan tanda-tanda tertentu (tag) untuk menyatakan kode-kode yang harus ditafsirkan oleh browser agar halaman tersebut dapat ditampilkan secara benar.
+Secara umum, fungsi HTML adalah untuk mengelola serangkaian data dan informasi sehingga suatu dokumen dapat diakses dan ditampilkan di Internet melalui layanan web.
+
+
+Fungsi HTML yang lebih spesifik yaitu :
+- Membuat halaman web.
+- Menampilkan berbagai informasi di dalam sebuah browser Internet.
+- Membuat link menuju halaman web lain dengan kode tertentu (hypertext).
+
+
+# Alasan dibutuhkannya data delivery dalam pengimplementasian sebuah platform
+Penggunaan data delivery akan menjadi hal yang menguntungkan saat mengimplementasikan suatu platform. Dalam penggunaan sebuah platform, pertukaran data antara client dan server pasti terjadi, misalnya untuk melakukan CRUD (Create, Read, Update, Delete). Pertukaran ini akan dipermudah dan komunikasinya dapat diterima dengan baik dengan data delivery ini. Untuk melakukan data delivery, dapat digunakan format tertentu seperti HTML, JSON, dan XML.
+
+
+# Step Pengimplementasian
+- Mengaktivasi virtual environment di directory project lalu menjalankan ‘python manage.py startapp mywatchlist’ untuk membuat aplikasi Django baru bernama mywatchlist.
+
+
+- Menambahkan path ` mywatchlist` di file `/project_django/urls.py` dengan kode:
+`urlpatterns = [
+    ...
+    path('mywatchlist/', include('mywatchlist.urls')),
+]`
  
+ 
+- Menambahkan `mywatchlist` ke `INSTALLED_APPS` di file `/project_django/settings.py` dengan kode:
+`INSTALLED_APPS = [
+    ...,
+    'mywatchlist',
+]`
+
+
+- Membuat model MyWatchlist di `/mywatchlist/models.py` dengan atribut-atribut yaitu `watched, title, rating, release_date, review` dan field yang sesuai. Kemudian, melakukan migrasi dengan menjalankan `python manage.py makemigration` dan `python manage.py migrate`
+
+
+- Membuat direktori baru `/mywatchlist/fixtures/movies_catalog.json` dan menambahkan data berupa 10 film yang ingin dimasukkan ke database.
+
+
+- Membuat fungsi untuk menampilkan data-data tersebut dengan format HTML, JSON, dan XML di `mywatchlist/views.py` kemudian melakukan routing untuk menampilkan masing-masing format dengan menambahkan path pada list `urlpatterns` di `/mywatchlist/urls.py.`
+
+
+- Menambahkan `&& python manage.py loaddata movies_catalog.json` di baris pertama Procfile. Setelah semua selesai, melakukan `git pull, commit, push` lalu menjalankan workflow yang gagal agar aplikasi mywatchlist ter-deploy di aplikasi Heroku.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
  
  
  
