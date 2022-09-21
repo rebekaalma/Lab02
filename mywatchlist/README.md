@@ -4,7 +4,7 @@ Jelaskan perbedaan antara JSON, XML, dan HTML!
  Mengakses tiga URL di poin 6 menggunakan Postman, menangkap screenshot, dan menambahkannya ke dalam README.md
  Menambahkan unit test pada tests.py untuk menguji bahwa tiga URL di poin 6 dapat mengembalikan respon HTTP 200 OK
  
- **LINK HEROKU:**
+ **LINK HEROKU: https://katalog-lab02-2106653060.herokuapp.com/mywatchlist/html/**
  
  
 **PERBDAAN ANTARA JSON, XML, dan HTML**
