@@ -28,25 +28,22 @@ Perbedaan dari JSON dengan XML berdasarkan beberapa poin penting, seperti:
 
 
 **Elemen**
+
+
 Yang pertama adalah cara menyimpan elemen,  JSON menyimpan elemennya secara efisien akan tetapi tidak rapi untuk dilihat. Sedangkan XML menyimpan elemen-elemen nya dengan cara yang terstruktur, mudah dibaca oleh manusia dan mesin, akan tetapi kurang efisien.
 
 
 **Ekstensi file**
+
+
 Nama dari file JSON akan diakhiri dengan ekstensi .json. Sementara file XML akan diakhiri dengan ekstensi .xml.
 
 
 **Penerapan**
+
+
 Untuk penerapannya, JSON digunakan untuk mengirimkan data dengan cara data diuraikan dan dikirimkan melalui internet. Sedangkan XML memiliki data yang lebih terstruktur dan pengguna dapat menggunakannya untuk menambahkan catatan.
 
-
-# HTML
-HTML (HyperText Markup Language) adalah suatu bahasa yang menggunakan tanda-tanda tertentu (tag) untuk menyatakan kode-kode yang harus ditafsirkan oleh browser agar halaman tersebut dapat ditampilkan secara benar. Secara umum, fungsi HTML adalah untuk mengelola serangkaian data dan informasi sehingga suatu dokumen dapat diakses dan ditampilkan di Internet melalui layanan web.
-
-
-Fungsi HTML yang lebih spesifik yaitu :
-- Membuat halaman web.
-- Menampilkan berbagai informasi di dalam sebuah browser Internet.
-- Membuat link menuju halaman web lain dengan kode tertentu (hypertext).
  
  # HTML
 HTML (HyperText Markup Language) adalah suatu bahasa yang menggunakan tanda-tanda tertentu (tag) untuk menyatakan kode-kode yang harus ditafsirkan oleh browser agar halaman tersebut dapat ditampilkan secara benar.
@@ -92,6 +89,25 @@ Penggunaan data delivery akan menjadi hal yang menguntungkan saat mengimplementa
 
 - Menambahkan `&& python manage.py loaddata movies_catalog.json` di baris pertama Procfile. Setelah semua selesai, melakukan `git pull, commit, push` lalu menjalankan workflow yang gagal agar aplikasi mywatchlist ter-deploy di aplikasi Heroku.
  
+ # Postman
+ 
+ **html response**
+ 
+ 
+ ![image](https://user-images.githubusercontent.com/112610405/191510514-ddb3b54f-33b8-418f-aab9-c5f8127a00f1.png)
+
+ 
+ 
+ **xml response**
+ 
+ 
+ ![image](https://user-images.githubusercontent.com/112610405/191510808-8ba26681-c524-4dd1-bbb1-ef1d42e21a7d.png)
+
+ 
+ **json response**
+ 
+ ![image](https://user-images.githubusercontent.com/112610405/191512473-5c2b822b-ffe6-416c-bd85-78cde18ae4c9.png)
+
  
  
  
