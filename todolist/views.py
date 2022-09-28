@@ -46,8 +46,7 @@ def show_todolist(request):
     data_todolist = Task.objects.all().filter(user=request.user)
 
     context = {
-        'nama' : 'Rebeka',
-        'NPM' : '2106653060',
+        'nama' : request.user,
         'todolist': data_todolist,
     }
 
