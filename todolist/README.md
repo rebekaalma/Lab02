@@ -28,6 +28,8 @@ Ya, tentunya kita dapat elemen form secara manual tanpa menggunakan generator se
 
 
 Untuk lebih jelas, dapat dilihat seperti flowchart dibawah ini:
+
+
 <img width="232" alt="image" src="https://user-images.githubusercontent.com/112610405/192869239-33b7a2dd-1de1-4a80-92a6-d602c6b9a1c4.png">
 
 
