@@ -1,3 +1,5 @@
+tautan Herooku: https://katalog-lab02-2106653060.herokuapp.com/todolist/ 
+
 # Kegunaan `% csrf_token %` pada elemen `<form>` 
 
 
@@ -23,3 +25,20 @@ Ya, tentunya kita dapat elemen form secara manual tanpa menggunakan generator se
 - Saat ada data yang tidak valid, beri informasi ke user mengenai data mana yang tidak valid untuk prompt ulang
 - Saat semua data valid, data tersebut akan disimpan dan lakukan sesuai logic yang kita inginkan dan kita deliver ke dalam context agar dapat di-render ke html
 - Untuk tugas 3 PBP kali ini, kita diminta untuk membuat task baru sesuai dengan input title dan description.
+
+
+Untuk lebih jelas, dapat dilihat seperti flowchart dibawah ini:
+<img width="232" alt="image" src="https://user-images.githubusercontent.com/112610405/192869239-33b7a2dd-1de1-4a80-92a6-d602c6b9a1c4.png">
+
+
+# step implementasi :)
+- Dalam cmd sesuaikan dengan folder yang dituju dan jalankan python manage.py startapp todolist
+- Menambahkan path('todolist/', include('todolist.urls')), di urls.py. .project django agar route dengan url yang ada di todolist dan menjalankan fungsi show_todolist yang ada di todolist/views.py.
+- Menambahkan class di todolist/models.py dan membuatnya field sesuai dengan steps dalam soal.
+- Membuat fungsi login, logout, register yang masing masing terhubung dengan login.html dan register.html dan membuat restriksi agar user harus login dahulu dengan menambahkan @login_required(login_url='/todolist/login/') diatas fungsi yang merupakan main dari project.
+- Mengedit bagian html agar menampilkan user dengan mengakses variable yang ada di context ({{username}}) dan membuat dua buah button yang masing-masing memiliki logical command untuk logout, tambah task baru, dan membuat tabel untuk menampilkan data-data todolist yang sudah di submit ke database.
+- Ketika user meng-klik tombol tambah task, user akan diarahkan ke halaman baru todolist/create-task dan akan membuat form yang berisi task dan description yang akan dikirim ke fungsi create di views.py untuk ditambahkan ke database.
+- Membuat route agar terhubung dengan fungsi fungsi yang ada di views py ketika mengakses link todolist/register, login, create-task, delete, change, dan lain-lain sesuai kebutuhan soal.
+- Deploy ke heroku dan membuat 2 user sesuai dengan soal.
+akun 1: rebeka_alma, pass: bkbkbkbk
+akun 2: rebeka_2, pass: bkbkbkbk
