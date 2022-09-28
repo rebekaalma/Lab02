@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+
+<center style="color: deeppink">
+
+    <h1>Lab 3 Assignment PBP/PBD</h1>
+
+    <h5>Name: </h5>
+    <p>{{nama}}</p>
+
+    <h5>Student ID: </h5>
+    <p>{{NPM}}</p>
+
+    <button><a href="{% url 'todolist:savetask' %}">Create task</a></button>
+    <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+</center>
+
+<style> body{
+    background-color:navajowhite;
+}
+.table{
+    margin: 0 auto;
+}
+
+</style>
+
+
+<center>
+  <table border="1" class="table">
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Is Finished</th>
+      <th>Button</th>
+      <th>Delete</th>
+    </tr>
+    {% comment %} Add the data below this line {% endcomment %}
+    {% for task in todolist %}
+      <tr>
+        <th>{{task.user}}</th>
+        <th>{{task.date}}</th>
+        <th>{{task.title}}</th>
+        <th>{{task.description}}</th>
+        <th>{{task.is_finished}}</th>
+        <th>
+            <a href="{% url 'todolist:marker' task.id %}"><button>Update</button></a>
+        </th>
+        <th>
+            <a href="{% url 'todolist:delete' task.id %}"><button>Delete</button></a>
+        </th>
+      </tr>
+    {%endfor%}  
+
+  </table>
+</center>
+
+ {% endblock content %}
