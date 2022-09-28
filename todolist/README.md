@@ -1,4 +1,4 @@
-tautan Herooku: https://katalog-lab02-2106653060.herokuapp.com/todolist/ 
+Tautan Heroku: https://katalog-lab02-2106653060.herokuapp.com/todolist/ 
 
 # Kegunaan `% csrf_token %` pada elemen `<form>` 
 
@@ -31,7 +31,7 @@ Untuk lebih jelas, dapat dilihat seperti flowchart dibawah ini:
 <img width="232" alt="image" src="https://user-images.githubusercontent.com/112610405/192869239-33b7a2dd-1de1-4a80-92a6-d602c6b9a1c4.png">
 
 
-# step implementasi :)
+# Step implementasi
 - Dalam cmd sesuaikan dengan folder yang dituju dan jalankan python manage.py startapp todolist
 - Menambahkan path('todolist/', include('todolist.urls')), di urls.py. .project django agar route dengan url yang ada di todolist dan menjalankan fungsi show_todolist yang ada di todolist/views.py.
 - Menambahkan class di todolist/models.py dan membuatnya field sesuai dengan steps dalam soal.
