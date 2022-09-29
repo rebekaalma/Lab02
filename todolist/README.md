@@ -7,7 +7,7 @@ CSRF atau singkatan dari Cross Site Request Forgery merupakan sebuah serangan ek
 
 
 
-Contoh tindakannya sendiri beragam dan yang pastinya merugikan. Contohnya seperti mengganti foto profil dengan gambar orang lain, menghapus akun pengguna, hingga mentransfer uang ke sebuah akun. Oleh karena itu, Django memberikan fasilitas yaitu CSRF Token yang merupakan kode rahasia acak dan unik untuk setiap situs tertentu. CSRF Token akan dikirimkan dengan setiap form yang dikirimkan oleh web kepada user sebagai proteksi dari serangan eksploitasi web. Semua request yang masuk harus memiliki cookie CSRF, CSRF Token juga harus ada dan benar yang membuat sulit bagi oknum yang tidak bertanggung jawab tersebut untuk meniru request yang sama karena CSRF Token sangat panjang. **Tanpa CSRF Token, pengguna akan mendapatkan 403 error.**
+Contoh tindakannya sendiri beragam dan yang pastinya merugikan seperti mengganti foto profil dengan gambar orang lain, menghapus akun pengguna, hingga mentransfer uang ke sebuah akun. Oleh karena itu, Django memberikan fasilitas yaitu CSRF Token yang merupakan kode rahasia acak dan unik untuk setiap situs tertentu. CSRF Token akan dikirimkan dengan setiap form yang dikirimkan oleh web kepada user sebagai proteksi dari serangan eksploitasi web. Semua request yang masuk harus memiliki cookie CSRF, CSRF Token juga harus ada dan benar yang membuat sulit bagi oknum yang tidak bertanggung jawab tersebut untuk meniru request yang sama karena CSRF Token sangat panjang. **Tanpa CSRF Token, pengguna akan mendapatkan 403 error.**
 
 
 # Elemen `<form>` secara manual
