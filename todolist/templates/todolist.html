@@ -15,44 +15,45 @@
 </center>
 
 <style> body{
-    background-color:navajowhite;
+    background-color:rgb(238, 189, 218);
 }
 .table{
     margin: 0 auto;
+}
+
+.card {
+  background: linear-gradient(to bottom, #a2cde9 0%, #ade7b5 100%);
 }
 
 </style>
 
 
 <center>
-  <table border="1" class="table">
-    <tr>
-      <th>User</th>
-      <th>Date</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Is Finished</th>
-      <th>Button</th>
-      <th>Delete</th>
-    </tr>
-    {% comment %} Add the data below this line {% endcomment %}
-    {% for task in todolist %}
-      <tr>
-        <th>{{task.user}}</th>
-        <th>{{task.date}}</th>
-        <th>{{task.title}}</th>
-        <th>{{task.description}}</th>
-        <th>{{task.is_finished}}</th>
-        <th>
-            <a href="{% url 'todolist:marker' task.id %}"><button>Update</button></a>
-        </th>
-        <th>
-            <a href="{% url 'todolist:delete' task.id %}"><button>Delete</button></a>
-        </th>
-      </tr>
-    {%endfor%}  
 
-  </table>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% comment %} Add the data below this line {% endcomment %}
+      {% for task in todolist %}
+  
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+  
+            <h5 class="card-title">{{ task.user }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ task.date }}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{ task.title }}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{ task.is_finished }}</h6>
+            <p class="card-text">{{task.description}}</p>
+            <a href="{% url 'todolist:marker' task.id %}" class="card-link"><button>Update</button></a>
+            <a href="{% url 'todolist:delete' task.id %}" class="card-link"><button>Delete</button></a>
+          </div>
+        </div>
+      </div>
+        
+      {%endfor%}  
+    </div>
+  
+  </div>
 </center>
 
  {% endblock content %}
