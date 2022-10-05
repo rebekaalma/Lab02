@@ -137,8 +137,7 @@ Contoh:
  `* {
     border: 1px dashed black;
     color: pink;
-}
-`
+}`
 
 
 Kode di atas akan membuat semua elemen HTML memiliki garis tepi patah-patah berwarna hitam dan warna teksnya akan berwarna pink.
@@ -147,8 +146,9 @@ Kode di atas akan membuat semua elemen HTML memiliki garis tepi patah-patah berw
  `*{
     padding: 0;
     margin: 0;
-}
-`
+}`
+
+
 Kode di atas akan menghilangkan semua padding dan margin yang setiap elemen HTML miliki pada berbagai browser.
  
  **Tag Selector**
@@ -160,11 +160,11 @@ Contoh:
 
 `h1{
     color: green;
-}
-`
+}`
 
 
 Nama tag h1 mewakili semua elemen <h1> dalam dokumen HTML. Jadi kode di atas akan membuat teks pada seluruh elemen <h1> berwarna hijau.
+ 
  
  **Id Selector**
  
