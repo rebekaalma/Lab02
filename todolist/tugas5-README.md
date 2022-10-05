@@ -68,6 +68,35 @@ File CSS dapat digunakan di beberapa halaman website sekaligus.
  
 Halaman akan menjadi berantakan, ketika file CSS gagal dipanggil oleh file HTML. Hal ini terjadi disebabkan karena koneksi internet yang lambat.
  
+
+ ## Tag HTML5
+Struktur HTML didefinisikan dengan <head></head> dan <body></body> dimana di dalam head terdapat tag yang mengandung informasi terkait halaman tersebut seperti <title></title> untuk judul halaman. Konten atau elemen bisa ditutup dalam <div></div> yaitu divider atau semacam container untuk elemen-elemen lainnya, seperti:
  
+ 
+<a> : mendefinisikan suatu hyperlink
+<b> : menyajikan teks dalam format bold
+<body> : mendefinisikan body dari document
+<br> : memberikan line break
+<button> : membuat clickable button
+<div> : menentukan suatu section dalam document
+<head> : mendefinisikan head dari document
+<h1> sampai <h6> : mendefinisikan heading dari HTML
+<hr> : menyajikan garis horizontal
+<p> : mendefinisikan paragraf
+<style> : memasukkan informasi style pada head document
+<table> : mendefinisikan data dari table
+<td> : mendefinisikan cell pada table
+<th> : mendefinisikan header cell pada table
+<tr> : mendefinisikan row cell pada table
+ 
+ 
+## Tipe - tipe CSS Selector
+Selector merupakan sebuah penanda berupa kata kunci, tag html, ataupun simbol untuk memilih suatu elemen HTML yang akan kita beri aturan CSS nantinya. Jadi ia adalah perwakilan dari suatu elemen HTML yang nanti akan kita tentukan style padanya.
+**Universal Selector**
+Universal selector merupakan selector yang sering programmer gunakan untuk memilih dan menyeleksi semua elemen pada suatu dokumen HTML.
+ 
+ 
+## Steps implementasi
+
  
  
