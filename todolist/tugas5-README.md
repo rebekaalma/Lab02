@@ -133,8 +133,8 @@ Selector merupakan sebuah penanda berupa kata kunci, tag html, ataupun simbol un
 Universal selector merupakan selector yang sering programmer gunakan untuk memilih dan menyeleksi semua elemen pada suatu dokumen HTML.
 Contoh:
 
-
- `* {
+`
+ * {
  
  
     border: 1px dashed black;
@@ -143,13 +143,15 @@ Contoh:
     color: pink;
     
     
-}`
+}
+ `
 
 
 Kode di atas akan membuat semua elemen HTML memiliki garis tepi patah-patah berwarna hitam dan warna teksnya akan berwarna pink.
 
 
- `*{
+ `
+ *{
  
  
     padding: 0;
@@ -158,7 +160,8 @@ Kode di atas akan membuat semua elemen HTML memiliki garis tepi patah-patah berw
     margin: 0;
     
     
-}`
+}
+ `
 
 
 Kode di atas akan menghilangkan semua padding dan margin yang setiap elemen HTML miliki pada berbagai browser.
@@ -170,16 +173,18 @@ Sesuai dengan namanya, selektor tag merupakan selektor yang memilih elemen berda
 Contoh:
 
 
-`h1{
+`
+ h1{
 
 
     color: green;
     
     
-}`
+}
+ `
 
 
-Nama tag h1 mewakili semua elemen <h1> dalam dokumen HTML. Jadi kode di atas akan membuat teks pada seluruh elemen <h1> berwarna hijau.
+Nama tag h1 mewakili semua elemen `<h1>` dalam dokumen HTML. Jadi kode di atas akan membuat teks pada seluruh elemen `<h1>` berwarna hijau.
  
  
  **Id Selector**
@@ -189,7 +194,8 @@ Selektor id merupakan selektor yang bersifat unik. Artinya, selektor id hanya da
 Contoh:
 
 
- `#first-header{
+ `
+ #first-header{
  
  
     background-color: black;
@@ -211,7 +217,8 @@ Karena bersifat unik atau hanya mengizinkan satu elemen saja, maka ketika kita g
 Selektor class hampir sama dengan selektor id, bedanya selektor ini tidak bersifat unik dan untuk membuatnya kita memerlukan tanda titik (.)
 
 
-`.btn-primary{
+`
+ .btn-primary{
 
 
     background-color: lightblue;
@@ -229,8 +236,8 @@ Karena tidak bersifat unik seperti selektor id, maka satu selektor class dapat k
  
  **Atribut Selector**
  
- 
-Atribut Selector merupakan selector yang memilih elemen berdasarkan tag dan atributnya. Jadi selektor ini hampir sama dengan selektor tag hanya saja atribut dari tag yang dipilih ikut didefinisikan.
+
+ Atribut Selector merupakan selector yang memilih elemen berdasarkan tag dan atributnya. Jadi selektor ini hampir sama dengan selektor tag hanya saja atribut dari tag yang dipilih ikut didefinisikan.
 
 
 `<a title="Link Download" href="#">Download</a>`
