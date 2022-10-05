@@ -135,8 +135,14 @@ Contoh:
 
 
  `* {
+ 
+ 
     border: 1px dashed black;
+    
+    
     color: pink;
+    
+    
 }`
 
 
@@ -144,14 +150,20 @@ Kode di atas akan membuat semua elemen HTML memiliki garis tepi patah-patah berw
 
 
  `*{
+ 
+ 
     padding: 0;
+    
+    
     margin: 0;
+    
+    
 }`
 
 
 Kode di atas akan menghilangkan semua padding dan margin yang setiap elemen HTML miliki pada berbagai browser.
  
- **Tag Selector**
+__Tag Selector__
  
  
 Sesuai dengan namanya, selektor tag merupakan selektor yang memilih elemen berdasarkan nama tagnya.
@@ -159,7 +171,11 @@ Contoh:
 
 
 `h1{
+
+
     color: green;
+    
+    
 }`
 
 
@@ -174,8 +190,14 @@ Contoh:
 
 
  `#first-header{
+ 
+ 
     background-color: black;
+    
+    
     color: pink;
+    
+    
 }
 `
 
@@ -190,8 +212,14 @@ Selektor class hampir sama dengan selektor id, bedanya selektor ini tidak bersif
 
 
 `.btn-primary{
+
+
     background-color: lightblue;
+    
+    
     color: white;
+    
+    
 }
 `
 
