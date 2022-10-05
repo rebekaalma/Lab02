@@ -250,14 +250,16 @@ Karena tidak bersifat unik seperti selektor id, maka satu selektor class dapat k
  
 - Kustomisasi halaman todo list sesuai dengan target soal yaitu dengan menggunakan cards. Dalam tugas 5 ini, satu task dibuat dalam satu card dan diminta membuat hover dengan menambahkan code dibawah ini:
  
- '  .card:hover{
+ '
+  .card:hover{
   transform: scale(1.1);
 
   }
   .card{
       transition: transform .5s;
-  }'
-
+  }
+'
+ 
  
 - Membuat masing - masing halaman menjadi responsive sesuai kebutuhan.
  
