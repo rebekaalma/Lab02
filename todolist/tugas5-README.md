@@ -133,7 +133,8 @@ Selector merupakan sebuah penanda berupa kata kunci, tag html, ataupun simbol un
 Universal selector merupakan selector yang sering programmer gunakan untuk memilih dan menyeleksi semua elemen pada suatu dokumen HTML.
 Contoh:
 
-`
+ 
+```
  * {
  
  
@@ -144,13 +145,13 @@ Contoh:
     
     
 }
- `
+```
 
 
 Kode di atas akan membuat semua elemen HTML memiliki garis tepi patah-patah berwarna hitam dan warna teksnya akan berwarna pink.
 
 
- `
+```
  *{
  
  
@@ -161,7 +162,7 @@ Kode di atas akan membuat semua elemen HTML memiliki garis tepi patah-patah berw
     
     
 }
- `
+```
 
 
 Kode di atas akan menghilangkan semua padding dan margin yang setiap elemen HTML miliki pada berbagai browser.
@@ -173,7 +174,7 @@ Sesuai dengan namanya, selektor tag merupakan selektor yang memilih elemen berda
 Contoh:
 
 
-`
+ ```
  h1{
 
 
@@ -181,7 +182,7 @@ Contoh:
     
     
 }
- `
+```
 
 
 Nama tag h1 mewakili semua elemen `<h1>` dalam dokumen HTML. Jadi kode di atas akan membuat teks pada seluruh elemen `<h1>` berwarna hijau.
@@ -217,7 +218,7 @@ Karena bersifat unik atau hanya mengizinkan satu elemen saja, maka ketika kita g
 Selektor class hampir sama dengan selektor id, bedanya selektor ini tidak bersifat unik dan untuk membuatnya kita memerlukan tanda titik (.)
 
 
-`
+```
  .btn-primary{
 
 
@@ -228,7 +229,7 @@ Selektor class hampir sama dengan selektor id, bedanya selektor ini tidak bersif
     
     
 }
-`
+```
 
 
 Karena tidak bersifat unik seperti selektor id, maka satu selektor class dapat kita gunakan berulang kali pada lebih dari satu elemen HTML.
