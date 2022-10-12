@@ -26,21 +26,33 @@ function getCookie(name) {
  </script>
 
  <script>
-          function deleteCard(id) {
-            $.ajax({
-                url: `/todolist/delete/${id}`,
-                type: 'DELETE',
-                success: function (result) {
-                    $(`#task-${id}`).remove()
-                }
-            });
-        }
         function deleteCard(id) {
             $.ajax({
                 url: `/todolist/delete/${id}`,
                 type: 'DELETE',
+                headers: {
+          "X-CSRFToken": getCookie("csrftoken")
+        },
                 success: function (result) {
-                    $(`#task-${id}`).remove()
+                    $('#card-body').empty()
+                    $.get('/todolist/json', function (data) {
+    data.map((singleData) =>
+        $('#card-body').append(`<div class="col">
+       <div class="card" style="width: 18rem;">
+         <div class="card-body">
+ 
+           <h5 class="card-title">${singleData.fields.user}</h5>
+           <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.date}</h6>
+           <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.title}</h6>
+           <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.is_finished}</h6>
+           <p class="card-text">${singleData.fields.description}</p>
+           <a href="/todolist/marker/${singleData.pk}   " class="card-link"><button>Update</button></a>
+           <a  onclick="deleteCard(${singleData.pk})" class="card-link"><button>Delete</button></a>
+         </div>
+       </div>
+     </div>`)
+    );
+    });
                 }
             });
         }
@@ -51,23 +63,30 @@ function getCookie(name) {
             $.ajax({
                 url: `/todolist/update/${id}`,
                 type: 'PATCH',
+                headers: {
+          "X-CSRFToken": getCookie("csrftoken")
+        },
                 success: function (data) {
-                    $(`#task-${id}`).empty()
-                    $(`#task-${id}`).append(
-                        `<div class="rounded-3xl bg-gradient-to-r from-blue-100 ${data.fields.is_finished ? `to-green-600` : `to-rose-600`} p-4">
-                            <div class="flex justify-between">
-                                <span class="text-xs">${data.fields.date}</span>
-                                <ion-icon name="trash-outline" id="delete-icon" onclick="deleteCard(${data.pk})"></ion-icon>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-bold text-lg">${data.fields.title}</span>
-                            </div>
-                            <p>${data.fields.description}</p>
-                            <div class="flex justify-center mt-6">
-                                <ion-icon name=${data.fields.is_finished ? 'checkmark-outline' : 'close-outline'} onclick="updateCard(${data.pk})"></ion-icon>
-                            </div>
-                        </div>`
-                    )
+                  $('#card-body').empty()
+                    $.get('/todolist/json', function (data) {
+    data.map((singleData) =>
+        $('#card-body').append(`<div class="col">
+       <div class="card" style="width: 18rem;">
+         <div class="card-body">
+ 
+           <h5 class="card-title">${singleData.fields.user}</h5>
+           <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.date}</h6>
+           <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.title}</h6>
+           <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.is_finished}</h6>
+           <p class="card-text">${singleData.fields.description}</p>
+           <a onclick="updateCard(${singleData.pk})"   " class="card-link"><button>Update</button></a>
+           <a  onclick="deleteCard(${singleData.pk})" class="card-link"><button>Delete</button></a>
+         </div>
+       </div>
+     </div>`)
+    );
+    });
+                   
                 }
             });
         }
@@ -87,8 +106,8 @@ data.map((singleData) =>
        <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.title}</h6>
        <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.is_finished}</h6>
        <p class="card-text">${singleData.fields.description}</p>
-       <a href="/todolist/marker/${singleData.pk}   " class="card-link"><button>Update</button></a>
-       <a href="/todolist/delete/${singleData.pk}" class="card-link"><button>Delete</button></a>
+       <a onclick="updateCard(${singleData.pk})"  " class="card-link"><button>Update</button></a>
+       <a  onclick="deleteCard(${singleData.pk})" class="card-link"><button>Delete</button></a>
      </div>
    </div>
  </div>`)
@@ -125,8 +144,8 @@ data.map((singleData) =>
            <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.title}</h6>
            <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.is_finished}</h6>
            <p class="card-text">${singleData.fields.description}</p>
-           <a href="/todolist/marker/${singleData.pk}   " class="card-link"><button>Update</button></a>
-           <a href="/todolist/delete/${singleData.pk}" class="card-link"><button>Delete</button></a>
+           <a onclick="updateCard(${singleData.pk})"  " class="card-link"><button>Update</button></a>
+           <a  onclick="deleteCard(${singleData.pk})" class="card-link"><button>Delete</button></a>
          </div>
        </div>
      </div>`)

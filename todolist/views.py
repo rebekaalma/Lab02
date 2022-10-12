@@ -95,7 +95,7 @@ def add_todolist_json(request):
 @csrf_exempt
 def delete_task_ajax(request, id):
     if request.method == "DELETE":
-        task = get_object_or_404(Task, id = id)
+        task = Task.objects.get(id = id)
         task.delete()
     return HttpResponse(status=202)
 
