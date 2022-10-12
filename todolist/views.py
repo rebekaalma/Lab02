@@ -1,15 +1,15 @@
 from http.client import HTTPResponse
-from django.shortcuts import render
-from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from todolist.models import Task
 from django.contrib.auth.decorators import login_required
 from todolist.forms import TaskForm
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from datetime import date
 from django.core import serializers
+from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
 def register(request):
@@ -90,5 +90,33 @@ def add_todolist_json(request):
         if form.is_valid():
             form.save()
             return redirect('todolist:show_todolist')
+
+@login_required(login_url='/todolist/login')
+@csrf_exempt
+def delete_task_ajax(request, id):
+    if request.method == "DELETE":
+        task = get_object_or_404(Task, id = id)
+        task.delete()
+    return HttpResponse(status=202)
+
+@login_required(login_url='/todolist/login')
+@csrf_exempt
+def update_task_ajax(request, id):
+    if request.method == "PATCH":
+        task = get_object_or_404(Task, id = id)
+        task.is_finished = not task.is_finished
+        task.save()
+    
+    result = {
+        'fields':{
+            'title': task.title,
+            'description': task.description,
+            'is_finished': task.is_finished,
+            'date': task.date,
+            },
+            'pk': task.pk
+        }
+        
+    return JsonResponse(result)
 
     

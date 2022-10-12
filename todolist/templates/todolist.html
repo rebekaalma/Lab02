@@ -26,6 +26,54 @@ function getCookie(name) {
  </script>
 
  <script>
+          function deleteCard(id) {
+            $.ajax({
+                url: `/todolist/delete/${id}`,
+                type: 'DELETE',
+                success: function (result) {
+                    $(`#task-${id}`).remove()
+                }
+            });
+        }
+        function deleteCard(id) {
+            $.ajax({
+                url: `/todolist/delete/${id}`,
+                type: 'DELETE',
+                success: function (result) {
+                    $(`#task-${id}`).remove()
+                }
+            });
+        }
+ </script>
+
+<script>
+   function updateCard(id) {
+            $.ajax({
+                url: `/todolist/update/${id}`,
+                type: 'PATCH',
+                success: function (data) {
+                    $(`#task-${id}`).empty()
+                    $(`#task-${id}`).append(
+                        `<div class="rounded-3xl bg-gradient-to-r from-blue-100 ${data.fields.is_finished ? `to-green-600` : `to-rose-600`} p-4">
+                            <div class="flex justify-between">
+                                <span class="text-xs">${data.fields.date}</span>
+                                <ion-icon name="trash-outline" id="delete-icon" onclick="deleteCard(${data.pk})"></ion-icon>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-bold text-lg">${data.fields.title}</span>
+                            </div>
+                            <p>${data.fields.description}</p>
+                            <div class="flex justify-center mt-6">
+                                <ion-icon name=${data.fields.is_finished ? 'checkmark-outline' : 'close-outline'} onclick="updateCard(${data.pk})"></ion-icon>
+                            </div>
+                        </div>`
+                    )
+                }
+            });
+        }
+</script>
+
+ <script>
   $(document).ready(function () {
 
 $.get('/todolist/json', function (data) {

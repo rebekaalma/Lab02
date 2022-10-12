@@ -1,4 +1,4 @@
-from todolist.views import marker, register, login_user, logout_user, show_todolist, savetask, delete_task, show_todolist_json, add_todolist_json
+from todolist.views import marker, register, login_user, logout_user, show_todolist, savetask, delete_task, show_todolist_json, add_todolist_json,  delete_task_ajax,  update_task_ajax
 from django.urls import path
 
 
@@ -13,5 +13,7 @@ urlpatterns = [
     path('marker/<int:id>', marker, name='marker'),
     path('delete/<int:id>', delete_task, name='delete'),
     path('json/', show_todolist_json, name='todolist_json'),
-    path('add/', add_todolist_json, name='add_todolist_json ')
+    path('add/', add_todolist_json, name='add_todolist_json '),
+    path('delete/<id>', delete_task_ajax, name='delete-task-ajax'),
+    path('update/<id>', update_task_ajax, name='update-task-ajax'),
 ]
