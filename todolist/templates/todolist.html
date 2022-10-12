@@ -5,7 +5,7 @@
 {% load static %} 
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
- <script type="text/JavaScript" src="{% static 'get.js' %}"></script>
+ <!-- <script type="text/JavaScript" src="{% static 'get.js' %}"></script> -->
  <script>
   // using jQuery
 function getCookie(name) {
@@ -24,6 +24,31 @@ function getCookie(name) {
     return cookieValue;
 }
  </script>
+
+ <script>
+  $(document).ready(function () {
+
+$.get('/todolist/json', function (data) {
+data.map((singleData) =>
+    $('#card-body').append(`<div class="col">
+   <div class="card" style="width: 18rem;">
+     <div class="card-body">
+
+       <h5 class="card-title">${singleData.fields.user}</h5>
+       <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.date}</h6>
+       <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.title}</h6>
+       <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.is_finished}</h6>
+       <p class="card-text">${singleData.fields.description}</p>
+       <a href="/todolist/marker/${singleData.pk}   " class="card-link"><button>Update</button></a>
+       <a href="/todolist/delete/${singleData.pk}" class="card-link"><button>Delete</button></a>
+     </div>
+   </div>
+ </div>`)
+);
+});
+});
+ </script>
+
 <script>
   $(document).ready(function() {
     $('#task-form').submit(function(e) {
@@ -49,7 +74,7 @@ function getCookie(name) {
  
            <h5 class="card-title">${singleData.fields.user}</h5>
            <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.date}</h6>
-           <h6 class="card-subtitle mb-2 text-muted"${singleData.fields.title}</h6>
+           <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.title}</h6>
            <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.is_finished}</h6>
            <p class="card-text">${singleData.fields.description}</p>
            <a href="/todolist/marker/${singleData.pk}   " class="card-link"><button>Update</button></a>
@@ -68,20 +93,15 @@ function getCookie(name) {
   })
 </script>
 
-<center style="color: rgb(251, 4, 136)">
+<center style="color: rgb(242, 129, 189)">
 
-    <h1> 💗Assignment PBP/PBD💗 </h1>
+    <h1> 💗Welcome back!💗 </h1>
 
     <h5>Name: </h5>
     <p>{{nama}}</p>
 
     <button><a href="{% url 'todolist:savetask' %}">Create task</a></button>
     <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-
-        <!-- Button trigger modal -->
-    <button type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Add task
-    </button>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -115,6 +135,14 @@ function getCookie(name) {
     </div>
 
 </center>
+
+<center>
+         <!-- Button trigger modal -->
+         <button type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Add task
+        </button>
+</center>
+
 
 <style> body{
     background-color:rgb(15, 2, 9);
@@ -165,6 +193,7 @@ function getCookie(name) {
     </div>
   
   </div>
+
 </center>
 
  {% endblock content %}
