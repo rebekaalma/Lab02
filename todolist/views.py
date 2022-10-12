@@ -7,8 +7,9 @@ from django.contrib.auth import authenticate, login, logout
 from todolist.models import Task
 from django.contrib.auth.decorators import login_required
 from todolist.forms import TaskForm
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from datetime import date
+from django.core import serializers
 
 # Create your views here.
 def register(request):
@@ -47,7 +48,7 @@ def show_todolist(request):
 
     context = {
         'nama' : request.user,
-        'todolist': data_todolist,
+        # 'todolist': data_todolist,
     }
 
     return render(request, "todolist.html", context)
@@ -74,3 +75,20 @@ def delete_task(request, id):
     task = Task.objects.get(id = id)
     task.delete()
     return redirect('todolist:show_todolist')
+
+def show_todolist_json(request):
+    data_todolist = Task.objects.all().filter(user=request.user)
+
+    return HttpResponse(serializers.serialize("json", data_todolist), content_type = "application/json")
+
+def add_todolist_json(request):
+    is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
+
+    if is_ajax and request.method == "POST":
+        task = Task(user=request.user, date=date.today())
+        form = TaskForm(request.POST or None, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('todolist:show_todolist')
+
+    

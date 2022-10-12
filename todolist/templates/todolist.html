@@ -2,6 +2,72 @@
 
  {% block content %}
 
+{% load static %} 
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script type="text/JavaScript" src="{% static 'get.js' %}"></script>
+ <script>
+  // using jQuery
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+ </script>
+<script>
+  $(document).ready(function() {
+    $('#task-form').submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+        url: "/todolist/add/",
+        type: "POST",
+        headers: {
+          "X-CSRFToken": getCookie("csrftoken")
+        },
+        data: {
+          title : $('#task-title').val(),
+          description : $("#task-desc").val()
+        },
+        success: function(){
+          $('.col').remove();
+          $('#exampleModal').modal('hide');
+          $.get('/todolist/json', function (data) {
+    data.map((singleData) =>
+        $('#card-body').append(`<div class="col">
+       <div class="card" style="width: 18rem;">
+         <div class="card-body">
+ 
+           <h5 class="card-title">${singleData.fields.user}</h5>
+           <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.date}</h6>
+           <h6 class="card-subtitle mb-2 text-muted"${singleData.fields.title}</h6>
+           <h6 class="card-subtitle mb-2 text-muted">${singleData.fields.is_finished}</h6>
+           <p class="card-text">${singleData.fields.description}</p>
+           <a href="/todolist/marker/${singleData.pk}   " class="card-link"><button>Update</button></a>
+           <a href="/todolist/delete/${singleData.pk}" class="card-link"><button>Delete</button></a>
+         </div>
+       </div>
+     </div>`)
+    );
+    });
+        },
+        error: function(data){
+          alert("error")
+        }
+      });
+    });
+  })
+</script>
+
 <center style="color: rgb(251, 4, 136)">
 
     <h1> 💗Assignment PBP/PBD💗 </h1>
@@ -11,6 +77,42 @@
 
     <button><a href="{% url 'todolist:savetask' %}">Create task</a></button>
     <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+        <!-- Button trigger modal -->
+    <button type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add task
+    </button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="task-form">
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Title:</label>
+                <input type="text" class="form-control" id="task-title">
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Description:</label>
+                <textarea class="form-control" id="task-desc"></textarea>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" >Submit</button>
+              </div>
+  
+            </form>
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
 
 </center>
 
@@ -40,8 +142,8 @@
 <center>
 
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      {% comment %} Add the data below this line {% endcomment %}
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="card-body">
+      <!-- {% comment %} Add the data below this line {% endcomment %}
       {% for task in todolist %}
   
       <div class="col">
@@ -59,7 +161,7 @@
         </div>
       </div>
         
-      {%endfor%}  
+      {%endfor%}   -->
     </div>
   
   </div>
