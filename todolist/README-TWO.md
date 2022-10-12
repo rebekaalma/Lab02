@@ -31,14 +31,34 @@ Jika kita menggunakan AJAX, pengambilan data yang berasal dari backend tanpa rel
 
 
 # Steps Implementasi
-[ ] route url ke todolist/json dan memanggil fungsi show_ajax.
-[ ] Membuat fungsi show_ajax pada views.py yang mereturn response dalam bentuk Serializer json
-[ ] Import Jquery Ajax dengan tag <script>
-[ ] Menghapus code for loop menggunakan django syntax serta isinya dan membuat id pada div yang menaungi grid-cols
-[ ] Membuat fungsi dalam js yang bernama loadData untuk merender cards todolist yang ada pada database.json dengan method GET yang diarahkan pada url todolist/json. [ ] Render kemudian dimasukkan kedalam div yang menaungi grid-cols atau card view.
-[ ] Membuat document.ready function agar ketika website tampil, untuk pertama kalinya ia akan merender data data task yang sudah ada pada server
-[ ] Membuat modal dalam tailwind css yang membaut ketika button dipencet, akan menghilangkan tailwind hidden yang sebelumnya sudah dirender. Button yang dibuat akan dipasangkan dengan on click yang menjalankan fungsi open modal dengan parameter true. Ketika parameter true, pop up akan muncul, ketika false, modal akan menghilang.
-[ ] Dalam modal, terdapa form dengan method POST yang akan melakukan tembak ke database. Input dengan type submit yang ada pada form modal akan diarahkan ke todolist/add dan memanggil fungsi add_ajax yang ada pada views.py
-[ ] Membuat fungsi yang dalam js yang ketika form dalam modal disubmit, akan mengirimkan response ajax POST ke todolist/add dan ditangkap oleh fungsi add_ajax
-[ ] Membuat fungsi add_ajax dan mengambil data yang sudah dipost dengan cara request.POST.get dan membuat new object task kemudiam disave dalam database dengan method .save(). Fungsi ini juga mereturn response ok ketka berhasil dijalankan.
+- route url ke todolist/json dan memanggil fungsi show_ajax
+
+
+- Membuat fungsi show_ajax pada views.py yang mereturn response dalam bentuk Serializer json
+
+
+- Import Jquery Ajax dengan tag <script>
+ 
+ 
+- Menghapus code for loop menggunakan django syntax serta isinya dan membuat id pada div yang menaungi grid-cols
+ 
+ 
+- Membuat fungsi dalam js yang bernama loadData untuk merender cards todolist yang ada pada database.json dengan method GET yang diarahkan pada url todolist/json
+ 
+- Render kemudian dimasukkan kedalam div yang menaungi grid-cols atau card view
+ 
+ 
+- Membuat document.ready function agar ketika website tampil, untuk pertama kalinya ia akan merender data data task yang sudah ada pada server
+ 
+ 
+- Membuat modal dalam tailwind css yang membaut ketika button dipencet, akan menghilangkan tailwind hidden yang sebelumnya sudah dirender. Button yang dibuat akan dipasangkan dengan on click yang menjalankan fungsi open modal dengan parameter true. Ketika parameter true, pop up akan muncul, ketika false, modal akan menghilang
+ 
+ 
+- Dalam modal, terdapa form dengan method POST yang akan melakukan tembak ke database. Input dengan type submit yang ada pada form modal akan diarahkan ke todolist/add dan memanggil fungsi add_ajax yang ada pada views.py
+ 
+ 
+- Membuat fungsi yang dalam js yang ketika form dalam modal disubmit, akan mengirimkan response ajax POST ke todolist/add dan ditangkap oleh fungsi add_ajax
+ 
+ 
+- Membuat fungsi add_ajax dan mengambil data yang sudah dipost dengan cara request.POST.get dan membuat new object task kemudiam disave dalam database dengan method .save(). Fungsi ini juga mereturn response ok ketka berhasil dijalankan
 
