@@ -54,7 +54,7 @@ Jika kita menggunakan AJAX, pengambilan data yang berasal dari backend tanpa rel
 - Dalam modal, terdapat form dengan method POST yang akan melakukan tembak ke database. Input dengan type submit yang ada pada form modal akan diarahkan ke add dan memanggil fungsi add_todolist_json yang ada pada views.py
  
  
-- Membuat fungsi yang dalam js yang ketika form dalam modal disubmit, akan mengirimkan response ajax POST ke add dan ditangkap oleh fungsi add_todolist_json
+- Membuat fungsi yang dalam js yang ketika form dalam modal disubmit, akan mengirimkan response ajax POST ke add dan ditangkap oleh fungsi add_todolist_AJAX
  
  
 - Mengambil data yang sudah dipost dengan get dan membuat new object task kemudian disave dalam database dengan method .save()
